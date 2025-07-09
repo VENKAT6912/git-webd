@@ -1,0 +1,117 @@
+/* Global Reset and Base Styles */
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  height: 100%;
+}
+
+/* Background Wallpaper */
+body {
+  background-image: url('calc-wallpaper.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+/* Dark Mode Toggle */
+.mode-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-weight: bold;
+  backdrop-filter: blur(8px);
+}
+
+/* Calculator Container */
+.container {
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+}
+
+/* Calculator Layout */
+.calculator {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Display Screen */
+#display {
+  height: 60px;
+  font-size: 24px;
+  text-align: right;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background-color: #ffffffc7;
+}
+
+/* Buttons Grid */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+/* Button Styling */
+button {
+  height: 60px;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: #ffffffcc;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ffffff;
+  box-shadow: 0 0 10px #ffffffaa;
+}
+
+.zero {
+  grid-column: span 2;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #121212;
+  background-image: none;
+}
+
+body.dark-mode .container {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .mode-toggle {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+body.dark-mode button,
+body.dark-mode #display {
+  background-color: #2c2c2c;
+  color: white;
+}
+
+body.dark-mode button:hover {
+  background-color: #3c3c3c;
+  box-shadow: 0 0 10px #666;
+}
